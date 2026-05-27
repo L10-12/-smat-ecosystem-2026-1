@@ -12,10 +12,10 @@ class UnauthorizedException implements Exception {
 }
 
 class ApiService {
-  final String baseUrl = "http://10.0.2.2:8000";
+  final String baseUrl = "http://localhost:8000";
   final AuthService _authService = AuthService();
 
-  // Obtener todas las estaciones (Público según tu implementación actual)
+  // Obtener todas las estaciones 
   Future<List<Estacion>> obtenerEstaciones() async {
     try {
       final response = await http

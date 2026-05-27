@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                             if (snapshot.hasData && snapshot.data != null) {
                               final valor = snapshot.data!['valor'] ?? 0;
 
-                              if (valor <= 50) {
+                              if (valor <= 70) {
                                 iconColor = Colors.green;
                               } else {
                                 iconColor = Colors.red;
