@@ -2,33 +2,6 @@
 
 Sistema de Monitoreo Ambiental basado en MQTT, FastAPI y Flutter.
 
-# Requisitos
-
-## Backend
-
-```bash
-pip install fastapi uvicorn sqlalchemy pydantic python-jose[cryptography] passlib[bcrypt] python-multipart
-```
-
-## Sensores Simulados
-
-```bash
-pip install paho-mqtt requests
-```
-
-## Aplicación Móvil
-
-Instalar Flutter SDK:
-
-```text
-https://flutter.dev/docs/get-started/install
-```
-
-Verificar instalación:
-
-```bash
-flutter doctor
-```
 ---
 
 # Levantar el Backend
@@ -95,7 +68,7 @@ cd mobile
 
 ## 2. Configurar la URL base de la API
 
-Modificar la variable `baseUrl` según el dispositivo utilizado para las pruebas.
+Modificar la variable `baseUrl` en los archivos de la carpeta services según el dispositivo utilizado para las pruebas.
 
 ## 3. Ejecutar la aplicación
 
@@ -113,31 +86,25 @@ F5
 
 # Levantar los Sensores Simulados
 
-## 1. Crear y activar un entorno virtual
+## 1. Instalar dependencias
 
 ```bash
-python -m venv .venv
+pip install paho-mqtt requests
 ```
 
-## 2. Instalar dependencias
-
-```bash
-pip install paho-mqtt
-```
-
-## 3. Ubicarse en la carpeta de dispositivos IoT
+## 2. Ubicarse en la carpeta de dispositivos IoT
 
 ```bash
 cd iot_device
 ```
 
-## 4. Ejecutar el Bridge MQTT
+## 3. Ejecutar el Bridge MQTT
 
 ```bash
 python mqtt_bridge.py
 ```
 
-## 5. Ejecutar el Sensor Simulado
+## 4. Ejecutar el Sensor Simulado
 
 En una terminal diferente:
 
@@ -145,7 +112,7 @@ En una terminal diferente:
 python mqtt_sender.py
 ```
 
-## 6. Verificar funcionamiento
+## 5. Verificar funcionamiento
 
 Si todo está correctamente configurado, se observarán mensajes MQTT en la consola del sensor y registros de persistencia en la consola del Bridge.
 
