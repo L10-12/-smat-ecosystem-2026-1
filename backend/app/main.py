@@ -89,9 +89,7 @@ def eliminar_estacion(id: int, db: Session = Depends(get_db), usuario: str = Dep
 
 
 #--------------Endpoints para lecturas--------------
-@app.post(
-"/lecturas/",
-status_code=201,
+@app.post("/lecturas/",status_code=201,
 tags=["Telemetría de Sensores"],
 summary="Recibir datos de telemetría",
 description="Recibe el valor capturado por un sensor y lo vincula a una estación existente mediante suID.")

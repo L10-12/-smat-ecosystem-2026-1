@@ -10,7 +10,10 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 def crear_token_acceso(data: dict):
     para_encriptar = data.copy()
-    expiracion = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    if(data["sub"] == "admin"):
+        expiracion = datetime.now(timezone.utc) + timedelta(days=3)
+    else:
+        expiracion = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     para_encriptar.update({"exp": expiracion})
     return jwt.encode(para_encriptar, SECRET_KEY, algorithm=ALGORITHM)
 
