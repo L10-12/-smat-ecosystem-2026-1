@@ -5,7 +5,8 @@ import random
 
 BROKER = "broker.hivemq.com" # Broker público para pruebas
 PORT = 1883
-TOPIC = "fisi/smat/estaciones/1"
+ESTACION_ID=1   #Cambiar segun la estacion
+TOPIC = f"fisi/smat/estaciones/{ESTACION_ID}/lecturas"
 
 client = mqtt.Client()
 client.connect(BROKER, PORT)
